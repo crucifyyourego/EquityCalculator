@@ -5,13 +5,9 @@ import java.util.Random;
 public class Deck {
 	static LinkedList<Card> deck = new LinkedList();
 	static ArrayList<Card> board = new ArrayList();
-	static ArrayList<Card> player1HoleCards = new ArrayList();
+
 	
-	/*
-	Card[][] player1;
-	Card[][] player2;
-	Card[][] player3;
-	*/
+
 	
 	static Card aceOfSpades = new Card("A", "s", 14);
 	static Card deuceOfSpades = new Card("2", "s", 2);
@@ -66,6 +62,9 @@ public class Deck {
 	static Card queenOfDiamonds = new Card("Q", "d", 12);
 	static Card kingOfDiamonds = new Card("K", "d", 13);
 
+	
+	// Metoda tworz¹ca taliê kart
+	
 	public static void createDeck() {
 		deck.add(aceOfSpades);
 		deck.add(deuceOfSpades);
@@ -120,59 +119,9 @@ public class Deck {
 		deck.add(queenOfDiamonds);
 		deck.add(kingOfDiamonds);
 	}
-/*
-	public static void dealPlayer1() {
-		Deck.createDeck();
-		int max = 51;
-		int i = 2;
-		while (i > 0) {
-			int r = Deck.randomizeCard(0, max);
-			Card holeCard = deck.get(r);
-			player1HoleCards.add(holeCard);
-			deck.remove(holeCard);
-			--max;
-			--i;
-		}
-		deck.removeAll(deck);
-		System.out.println("Player hole cards: ");
-		for (Card hc : player1HoleCards) {
-			System.out.println(String.valueOf(hc.rank) + hc.suit);
-		}
-		player1HoleCards.removeAll(player1HoleCards);
-	}
-*/
-/*
-	public static void dealToRiver() {
-		Deck.createDeck();
-		int max = 51;
-		int i = 5;
-		while (i > 0) {
-			int j = Deck.randomizeCard(0, max);
-			Card communityCard = deck.get(j);
-			board.add(communityCard);
-			deck.remove(communityCard);
-			--max;
-			--i;
-		}
-		deck.removeAll(deck);
-	}
-*/
-	
-/*
-	public static void dealBoard() {
-		System.out.println("BOARD:");
-		for (Card g : board) {
-			System.out.println(String.valueOf(g.rank) + g.suit);
-		}
-	}
-*/
 
+// 	Ukradzione z neta - mo¿e siê przydaæ :D
 /*
-	public static void removeCards() {
-		board.removeAll(board);
-	}
-*/
-
 	private static int randomizeCard(int min, int max) {
 		if (min >= max) {
 			throw new IllegalArgumentException("max must be greater than min");
@@ -180,4 +129,5 @@ public class Deck {
 		Random r = new Random();
 		return r.nextInt(max - min + 1) + min;
 	}
+	*/
 }

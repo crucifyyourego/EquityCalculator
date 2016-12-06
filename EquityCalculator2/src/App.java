@@ -5,11 +5,10 @@ public class App {
 		
         long startTime = System.currentTimeMillis();
         Deck.createDeck();
-        Dealer.createMonteCarlo();
+        Dealer.dealMonteCarlo();
         long endTime = System.currentTimeMillis();
         long timeNeeded = endTime - startTime;
-        System.out.println("KONIEC: ");
-        System.out.println("Czas trwania: " + timeNeeded + "ms");
+        System.out.println("Czas trwania appki: " + timeNeeded + "ms");
         
 	}
 	
