@@ -2,6 +2,7 @@ class Card {
 
     String rank;
     String suit;
+
     
     
     Card(String r, String s) {

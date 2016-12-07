@@ -3,7 +3,7 @@ import java.util.LinkedList;
 public class Deck extends Card {
 	
 	
-	static LinkedList<Card> deck = new LinkedList();
+	static LinkedList<Card> deck = new LinkedList<Card>();
 	//static ArrayList<Card> board = new ArrayList();
 
 
