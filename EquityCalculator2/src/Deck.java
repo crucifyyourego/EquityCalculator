@@ -1,13 +1,22 @@
-import java.util.ArrayList;
 import java.util.LinkedList;
-import java.util.Random;
 
-public class Deck {
-	static LinkedList<Card> deck = new LinkedList();
-	static ArrayList<Card> board = new ArrayList();
-
+public class Deck extends Card {
 	
+	
+	static LinkedList<Card> deck = new LinkedList();
+	//static ArrayList<Card> board = new ArrayList();
 
+
+public static void createDeck2() {
+	for (Suit s: Suit.values()){
+		for(Rank d : Rank.values()){
+			Card deckCard = new Card(d.rank, s.suit);
+			deck.add(deckCard);
+		}
+	}
+}
+	
+/*
 	
 	static Card aceOfSpades = new Card("A", "s", 14);
 	static Card deuceOfSpades = new Card("2", "s", 2);
@@ -61,11 +70,15 @@ public class Deck {
 	static Card jackOfDiamonds = new Card("J", "d", 11);
 	static Card queenOfDiamonds = new Card("Q", "d", 12);
 	static Card kingOfDiamonds = new Card("K", "d", 13);
+	
+	*/
 
 	
 	// Metoda tworz¹ca taliê kart
 	
-	public static void createDeck() {
+	//public static void createDeck() {
+		
+	/*
 		deck.add(aceOfSpades);
 		deck.add(deuceOfSpades);
 		deck.add(threeOfSpades);
@@ -118,6 +131,8 @@ public class Deck {
 		deck.add(jackOfDiamonds);
 		deck.add(queenOfDiamonds);
 		deck.add(kingOfDiamonds);
+		
+		*/
 	}
 
 // 	Ukradzione z neta - mo¿e siê przydaæ :D
@@ -130,4 +145,4 @@ public class Deck {
 		return r.nextInt(max - min + 1) + min;
 	}
 	*/
-}
+

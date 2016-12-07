@@ -1,6 +1,6 @@
 import java.util.ArrayList;
 
-public class Dealer {
+public class Dealer extends Deck {
 
 	static int boardCounter = 1;
 	static ArrayList<Card> boardMonteCarlo = new ArrayList();
@@ -9,62 +9,62 @@ public class Dealer {
 	
 	public static void dealMonteCarlo() {
 
-		for (int flop1Counter = Deck.deck.size() - 1; flop1Counter >= 0; flop1Counter--) {
+		for (int flop1Counter = deck.size() - 1; flop1Counter >= 0; flop1Counter--) {
 			int flop1Remove = 0;
 			int flop2Remove = 0;
 			int flop3Remove = 0;
 			int turnRemove = 0;
 			flop1Remove = flop1Counter;
-			boardMonteCarlo.add(Deck.deck.get(flop1Counter));
-			Deck.deck.remove(flop1Counter);
+			boardMonteCarlo.add(deck.get(flop1Counter));
+			deck.remove(flop1Counter);
 
-			for (int flop2Counter = Deck.deck.size() - 1; flop2Counter >= 0; flop2Counter--) {
+			for (int flop2Counter = deck.size() - 1; flop2Counter >= 0; flop2Counter--) {
 				flop2Remove = flop2Counter;
-				boardMonteCarlo.add(Deck.deck.get(flop2Counter));
-				Deck.deck.remove(flop2Counter);
+				boardMonteCarlo.add(deck.get(flop2Counter));
+				deck.remove(flop2Counter);
 
-				for (int flop3Counter = Deck.deck.size() - 1; flop3Counter >= 0; flop3Counter--) {
+				for (int flop3Counter = deck.size() - 1; flop3Counter >= 0; flop3Counter--) {
 					flop3Remove = flop3Counter;
-					boardMonteCarlo.add(Deck.deck.get(flop3Counter));
-					Deck.deck.remove(flop3Counter);
+					boardMonteCarlo.add(deck.get(flop3Counter));
+					deck.remove(flop3Counter);
 
-					for (int turnCounter = Deck.deck.size() - 1; turnCounter >= 0; turnCounter--) {
+					for (int turnCounter = deck.size() - 1; turnCounter >= 0; turnCounter--) {
 						turnRemove = turnCounter;
-						boardMonteCarlo.add(Deck.deck.get(turnCounter));
-						Deck.deck.remove(turnCounter);
+						boardMonteCarlo.add(deck.get(turnCounter));
+						deck.remove(turnCounter);
 
-						for (int riverCounter = Deck.deck.size() - 1; riverCounter >= 0; riverCounter--) {
-							boardMonteCarlo.add(Deck.deck.get(riverCounter));
-							Deck.deck.remove(riverCounter);
+						for (int riverCounter = deck.size() - 1; riverCounter >= 0; riverCounter--) {
+							boardMonteCarlo.add(deck.get(riverCounter));
+							deck.remove(riverCounter);
 							countBoards();
-							dealBoard();
+							//dealBoard();
 							boardMonteCarlo.remove(4);
 
 						}
 
-						Deck.deck.removeAll(Deck.deck);
-						Deck.createDeck();
-						Deck.deck.remove(flop1Remove);
-						Deck.deck.remove(flop2Remove);
-						Deck.deck.remove(flop3Remove);
+						deck.clear();
+						Deck.createDeck2();
+						deck.remove(flop1Remove);
+						deck.remove(flop2Remove);
+						deck.remove(flop3Remove);
 						boardMonteCarlo.remove(3);
 
 					}
-					Deck.deck.removeAll(Deck.deck);
-					Deck.createDeck();
-					Deck.deck.remove(flop1Remove);
-					Deck.deck.remove(flop2Remove);
+					deck.clear();
+					createDeck2();
+					deck.remove(flop1Remove);
+					deck.remove(flop2Remove);
 					boardMonteCarlo.remove(2);
 
 				}
-				Deck.deck.removeAll(Deck.deck);
-				Deck.createDeck();
-				Deck.deck.remove(flop1Remove);
+				deck.clear();
+				createDeck2();
+				deck.remove(flop1Remove);
 				boardMonteCarlo.remove(1);
 
 			}
-			Deck.deck.removeAll(Deck.deck);
-			Deck.createDeck();
+			deck.clear();
+			createDeck2();
 			boardMonteCarlo.remove(0);
 
 		}
