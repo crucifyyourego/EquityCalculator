@@ -1,11 +1,11 @@
 class Card {
 
-    String rank;
-    String suit;
+    Rank rank;
+    Suit suit;
 
     
     
-    Card(String r, String s) {
+    Card(Rank r, Suit s) {
         this.rank = r;
         this.suit = s;
     }
@@ -14,38 +14,32 @@ class Card {
 	
 	public enum Rank {
 		
-		ACE("A"),
-		KING("K"),
-		QUEEN("Q"),
-		JACK("J"),
-		TEN("T"),
-		NINE("9"),
-		EIGHT("8"),
-		SEVEN("7"),
-		SIX("6"),
-		FIVE("5"),
-		FOUR("4"),
-		THREE("3"),
-		DEUCE("2");
+		ACE,
+		KING,
+		QUEEN,
+		JACK,
+		TEN,
+		NINE,
+		EIGHT,
+		SEVEN,
+		SIX,
+		FIVE,
+		FOUR,
+		THREE,
+		DEUCE;
 
-		String rank;
-		Rank(String rank){
-			this.rank = rank;
-		}
+
 		
 	}
 
 	public enum Suit {
 		
-		SPADES("s"),
-		CLUBS("c"),
-		HEARTS("h"),
-		DIAMONDS("d");
+		SPADES,
+		CLUBS,
+		HEARTS,
+		DIAMONDS;
 		
-		String suit;
-		Suit(String suit){
-			this.suit = suit;
-		}
+
 	}
 	
 	

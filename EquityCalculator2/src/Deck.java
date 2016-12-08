@@ -9,8 +9,8 @@ public class Deck extends Card {
 
 public static void createDeck2() {
 	for (Suit s: Suit.values()){
-		for(Rank d : Rank.values()){
-			Card deckCard = new Card(d.rank, s.suit);
+		for(Rank r : Rank.values()){
+			Card deckCard = new Card(r, s);
 			deck.add(deckCard);
 		}
 	}

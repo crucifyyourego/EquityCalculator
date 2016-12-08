@@ -25,13 +25,13 @@ public class Dealer extends Deck {
 							boardMonteCarlo.add(deck.remove(riverCounter));
 
 							countBoards();
-							// dealBoard();
+							//dealBoard();
 							boardMonteCarlo.remove(4);
 
 						}
 
 						deck.clear();
-						Deck.createDeck2();
+						createDeck2();
 						deck.remove(flop1Counter);
 						deck.remove(flop2Counter);
 						deck.remove(flop3Counter);
@@ -74,8 +74,8 @@ public class Dealer extends Deck {
 		Card river = boardMonteCarlo.get(4);
 
 		System.out.println("Board nr " + boardCounter);
-		System.out.println(flop1.rank + flop1.suit + " " + flop2.rank + flop2.suit + " " + flop3.rank + flop3.suit + " "
-				+ turn.rank + turn.suit + " " + river.rank + river.suit);
+		//System.out.println(flop1.rank + flop1.suit + " " + flop2.rank + flop2.suit + " " + flop3.rank + flop3.suit + " "
+				//+ turn.rank + turn.suit + " " + river.rank + river.suit);
 
 	}
 
